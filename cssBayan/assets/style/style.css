@@ -6,6 +6,7 @@ input{
 }
 label{
     display: block;
+    cursor: pointer;
 }
 
 .h1{
@@ -26,6 +27,8 @@ label{
 .open-icon{
     display: none;
     margin-left: 1em;
+    transition-property: all;
+    transition-duration: 0.3s;
 }
 .open-icon path{
     stroke: black;
@@ -33,16 +36,15 @@ label{
 .meme-text{
     font-weight: 700;
     font-size: 1em;
-    margin: 0.7em 0em;
+    margin: 0.3em 0em;
     color: blue;
 }
 .meme-img{
-    display: none;
-    width: 50%;
+    display: block;
+    width: 0%;
     margin: auto;
     transition-property: all;
-    transition-duration: 1s;
-    padding-bottom: 1em;
+    transition-duration: 0.2s;
 }
 
 
@@ -52,7 +54,7 @@ label{
 .bayen-container:hover .meme-text {
     color: black;
 }
-.meme-container:hover label {
+.bayen-container:hover {
     cursor: pointer;
 }
 .bayen-container:hover .open-icon{
@@ -64,7 +66,10 @@ label{
 }
 
 .meme-container:hover .meme-img{
-   display: block;
+   transition-property: all;
+   transition-duration: 0.2s;
+   width: 50%;
+   margin-bottom: 1em;
  }
  
 .meme-container:active .meme-text{
@@ -81,10 +86,15 @@ label{
 
 input:checked ~ * .meme-img{
     display: block;
+    width: 50%;
+    margin-bottom: 1em;
 }
 
 input:checked ~ * .meme-text{
     color:black;
+}
+input:checked ~ * .open-icon{
+    transform: rotate(45deg); 
 }
 
 /*----------------------------------------------------------------*/
@@ -96,7 +106,7 @@ input:checked ~ * .meme-text{
 
 @media (min-width: 320px){
     .h1{
-        font-size: 2em; 
+        font-size: 1.7em; 
     }
     .meme-text{
         font-size: 1.3em;
@@ -111,7 +121,7 @@ input:checked ~ * .meme-text{
         width: 60vw;
     }
     .meme-text{
-        font-size: 2em;
+        font-size: 1.5em;
     }    
 }
 
@@ -121,3 +131,5 @@ input:checked ~ * .meme-text{
     }
  
 }
+
+
